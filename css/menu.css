@@ -1,0 +1,50 @@
+/* Main Homepage */
+
+#jumbotron {
+  border: #32e0c4 3px solid;
+  display: flex;
+  height: 99vh;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#jumbotron .jumbotron-text {
+  animation: slide-up 500ms both ease-in-out;
+}
+
+#jumbotron .jumbotron-text h1 {
+  font-size: 4.3rem;
+}
+
+#jumbotron .jumbotron-text h2 {
+  font-weight: normal;
+  color: #f0f5f9;
+}
+
+#jumbotron .jumbotron-text p {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+#jumbotron .jumbotron-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#jumbotron .jumbotron-buttons a {
+  animation: slide-up 1000ms 400ms both;
+}
+
+/* Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
