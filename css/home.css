@@ -16,14 +16,23 @@ main {
   margin-bottom: 0.5rem;
 }
 
+#home-text h3 {
+  font-weight: normal;
+}
+
+.home-headers {
+  animation: slide-right 600ms ease-in-out both;
+}
+
 .about {
   margin-top: 3rem;
   text-align: center;
   display: flex;
+  animation: slide-right 600ms 300ms ease-in-out both;
 }
 
 .about i {
-  color: #32e0c4;
+  color: #00adb5;
 }
 
 .about p {
@@ -31,15 +40,12 @@ main {
   padding: 0 1.3rem;
 }
 
-.register {
-  text-align: center;
-}
-
 .form-content {
-  border: 1px solid #32e0c4;
+  border: 1px solid #00adb5;
   border-radius: 10px;
   display: inline-block;
   padding: 4rem;
+  animation: slide-down 600ms 700ms ease-in-out both;
 }
 
 .form-content h1 {
@@ -63,6 +69,6 @@ main {
   font-family: inherit;
   background-color: #1e2022;
   border-radius: 5px;
-  border: 1px solid #32e0c4;
+  border: 1px solid #00adb5;
   color: #f0f5f9;
 }

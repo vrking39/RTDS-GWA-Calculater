@@ -1,7 +1,6 @@
 /* Main Homepage */
-
 #jumbotron {
-  border: #32e0c4 3px solid;
+  border: #00adb5 3px solid;
   display: flex;
   height: 99vh;
   text-align: center;
@@ -34,17 +33,4 @@
 
 #jumbotron .jumbotron-buttons a {
   animation: slide-up 1000ms 400ms both;
-}
-
-/* Animations */
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
 }

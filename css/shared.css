@@ -1,5 +1,5 @@
 /* Import fonts */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 
 /* Reset */
 * {
@@ -32,21 +32,20 @@ h2 {
   font-size: 2.3rem;
 }
 
-h3 {
-  font-weight: normal;
-}
-
 a {
-  color: #32e0c4;
+  color: #00adb5;
 }
 
+li {
+  list-style: none;
+}
 
 /* buttons */
 .a-button,
 button {
   background-color: #1e2022;
-  border: 1px solid #32e0c4;
-  color: #32e0c4;
+  border: 1px solid #00adb5;
+  color: #00adb5;
   border-radius: 10px;
   font: inherit;
   font-size: 1.1rem;
@@ -59,10 +58,61 @@ button {
 .a-button:hover,
 button:hover {
   color: #1e2022;
-  background-color: #32e0c4;
+  background-color: #00adb5;
+}
+
+.button-sml {
+  height: 50px;
+  width: 200px;
+  font-size: 0.8rem;
+  margin: 0rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.button-selected {
+  background-color: #00adb5;
+  color: #1e2022;
 }
 
 /* Font Awesome Icons */
 i {
   margin: 0 0.5rem;
+}
+
+/* Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
