@@ -1,0 +1,43 @@
+#calculator-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Left side */
+.calculator-inputs {
+  display: flex;
+  padding: 5rem;
+}
+.calculator-inputs h3 {
+  text-align: center;
+}
+
+.calculator-inputs input,
+.calculator-inputs select {
+  height: 3.5rem;
+  width: 8.5rem;
+  font-size: 1.4rem;
+  padding-left: 1rem;
+  margin: 1.2rem;
+}
+
+.calc-input {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+/* Right side */
+.calculator-result {
+  text-align: center;
+}
+
+.calculator-result h1 {
+  font-size: 12rem;
+  font-weight: 500;
+}
+
+.calculator-result h2 {
+  font-weight: 300;
+}

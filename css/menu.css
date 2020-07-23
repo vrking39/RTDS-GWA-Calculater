@@ -12,6 +12,11 @@
   animation: slide-up 500ms both ease-in-out;
 }
 
+#jumbotron .logout {
+  font-size: 1rem;
+  text-decoration: none;
+}
+
 #jumbotron .jumbotron-text h1 {
   font-size: 4.3rem;
 }
