@@ -30,7 +30,9 @@
 
 /* Right side */
 .calculator-result {
+  align-self: flex-start;
   text-align: center;
+  padding-top: 5rem;
 }
 
 .calculator-result h1 {
