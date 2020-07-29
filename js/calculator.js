@@ -1,0 +1,75 @@
+const add = document.querySelector(".add");
+const gradeInputs = document.querySelector(".grade-inputs");
+const subjInputs = document.querySelector(".subj-inputs");
+const reset = document.querySelector(".reset");
+
+let inputNumber = 2;
+
+// ------------------------------------------------------
+// CLICK LISTENERS
+// ------------------------------------------------------
+
+// Click listener for add button
+add.addEventListener("click", function () {
+  addGradeInput();
+  addUnitInput();
+  addSubjInput();
+});
+
+// Click listener for reset button
+reset.addEventListener("click", function () {});
+
+
+// ------------------------------------------------------
+// FUNCTIONS
+// ------------------------------------------------------
+
+// Add more grades inputs
+function addGradeInput() {
+    // Add grades inputs
+    const input = document.createElement("input");
+    input.type = "number";
+    input.min = 0;
+    input.max = 4;
+    input.step = 0.01;
+    gradeInputs.appendChild(input); // put it into the DOM
+}
+
+// Subj
+function addSubjInput() {
+  // Add subj inputs
+  const input = document.createElement("input");
+  input.type = "text";
+  subjInputs.appendChild(input); // put it into the DOM
+}
+
+
+// Add more number of units inputs
+function addUnitInput() {
+
+  // Add unit inputs
+  const select = document.createElement("select");
+  document.querySelector(".unit-inputs").appendChild(select);
+
+  // Set name for select tag
+  select.setAttribute("name", "units" + inputNumber);
+  select.setAttribute("id", "units" + inputNumber);
+  inputNumber++;
+
+  // Create 1-6 options
+  for (let i = 1; i <= 6; i++) {
+
+    // Create an option element
+    const option = document.createElement("option");
+
+    // Create text
+    const text = document.createTextNode(i);
+    option.appendChild(text);
+
+    // Set value to
+    option.setAttribute("value", i);
+    select.appendChild(option);
+
+  }
+}
+
