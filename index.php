@@ -1,4 +1,12 @@
 <!-- Login Screen -->
+<?php
+  //if webapp has session, redirects to menu.php
+  session_start();
+  if (!empty($_SESSION)){
+    header('location: menu.php');
+  }
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +23,13 @@
   </head>
   <body>
     <main>
-      <!-- Headers and About Us Text -->
       <section id="home-text">
         <div class="home-headers">
           <h1>The University Grade Calculator</h1>
           <h3>The Only Grade Calculator You Need.</h3>
         </div>
+
+
         <div class="about">
           <div class="about-item">
             <i class="fas fa-tablet-alt fa-4x"></i>
@@ -37,15 +46,18 @@
             <p>Convert your GPA to other grading systems</p>
           </div>
         </div>
+
       </section>
 
-      <!-- Form here -->
+      <form method = "POST">
       <section id="form">
         <div class="form-content">
           <h2>Sign In</h2>
+
+          <?php require 'login.php';?>
+
           <div class="form-group">
-            <!-- Username -->
-            <label for="username">Username</label>
+            <label for="username">Username: </label>
             <div class="form-input">
               <input
                 type="text"
@@ -56,9 +68,8 @@
             </div>
           </div>
 
-          <!-- Password -->
           <div class="form-group">
-            <label for="username">Password</label>
+            <label for="username">Password: </label>
             <div class="form-input">
               <input
                 type="password"
@@ -69,12 +80,11 @@
             </div>
           </div>
 
-          <!-- Login button -->
           <button type="submit">Login</button>
+        </form>
 
-          <!-- Register Account Button -->
           <div class="register">
-            <p>No Account? <a href="">Sign Up </a></p>
+            <p>No Account? <a href="reg_page.php">Sign Up </a></p>
           </div>
         </div>
       </section>
