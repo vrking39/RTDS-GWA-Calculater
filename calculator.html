@@ -24,17 +24,25 @@
     <main id="calculator-content">
       <section class="calculator-inputs">
         <div class="calc-input grade-inputs">
-          <!-- Grades -->
           <h3>Grade</h3>
+
+          <!-- Grades input-->
           <input type="number" name="" id="" min="0" max="4" step="0.01" />
         </div>
         <div class="calc-input unit-inputs">
-          <!-- Number of Units -->
           <h3>Units</h3>
-          <select name="units" id="units">
+
+          <!-- Units input -->
+          <select name="units1" id="units1">
             <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
           </select>
         </div>
+
         <div class="calc-input subj-inputs">
           <h3>Subject Code</h3>
 
@@ -43,12 +51,18 @@
         </div>
       </section>
 
+     
       <section class="calculator-result">
         <h1>1.25</h1>
         <h2>General Weighted Average</h2>
-        <button><i class="fas fa-plus-circle"></i> Add</button>
-        <button><i class="fas fa-undo-alt"></i> Reset</button>
+        <button class="add"><i class="fas fa-plus-circle"></i> Add</button>
+        <button class="reset"><i class="fas fa-undo-alt"></i> Reset</button>
+        <br />
+        <button type="submit">
+          <i class="fas fa-calculator"></i> Calculate
+        </button>
       </section>
     </main>
+    <script src="js/calculator.js"></script>
   </body>
 </html>
