@@ -15,7 +15,6 @@ button {
   outline: none;
   border: none;
 }
-
 /* Shared CSS in all HTML files */
 body {
   background-color: #1e2022;
@@ -114,6 +113,7 @@ button:hover {
 
 /* Font Awesome Icons */
 i {
+  color: #00adb5;
   margin: 0 0.5rem;
 }
 
@@ -121,7 +121,10 @@ i {
 .form-content {
   border: 1px solid #00adb5;
   border-radius: 10px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 4rem;
 }
 

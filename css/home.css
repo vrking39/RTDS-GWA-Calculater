@@ -20,6 +20,10 @@ main {
   font-weight: normal;
 }
 
+#portrait-only {
+  display: none;
+}
+
 .home-headers {
   animation: slide-right 600ms ease-in-out both;
 }
@@ -31,10 +35,6 @@ main {
   animation: slide-right 600ms 300ms ease-in-out both;
 }
 
-.about i {
-  color: #00adb5;
-}
-
 .about p {
   margin-top: 1rem;
   padding: 0 1.3rem;
@@ -42,4 +42,252 @@ main {
 
 .form-content {
   animation: slide-down 600ms 700ms ease-in-out both;
+}
+
+/* ------------------------------------------------ */
+/* MEDIA QUERIES */
+
+/* WIDTH */
+@media (min-width: 1600px) {
+  #home-text h1 {
+    font-size: 3.5rem;
+  }
+
+  #home-text h3 {
+    font-size: 1.5rem;
+  }
+
+  #home-text p {
+    font-size: 1.1rem;
+  }
+
+  .form-content {
+    padding: 4rem;
+    width: 500px;
+    height: 590px;
+  }
+
+  .form-content h2 {
+    font-size: 2.9rem;
+  }
+}
+
+@media (max-width: 1366px) {
+  #home-text h1 {
+    font-size: 2.7rem;
+  }
+
+  #home-text p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1175px) {
+  main {
+    height: auto;
+    display: block;
+    max-width: 90%;
+  }
+
+  #home-text {
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #form {
+    margin-bottom: 2rem;
+  }
+
+  .form-content {
+    animation: none;
+    padding: 2rem;
+    height: 90vh;
+    width: 100%;
+  }
+
+  #home-text h1 {
+    font-size: 2.5rem;
+  }
+
+  #home-text h3 {
+    font-size: 1.4rem;
+  }
+
+  #home-text p {
+    font-size: 0.9rem;
+  }
+
+  .form-input input {
+    width: 600px;
+  }
+}
+
+@media (max-width: 950px) {
+  #home-text h1 {
+    font-size: 2rem;
+  }
+
+  #home-text h3 {
+    font-size: 1.3rem;
+  }
+
+  #home-text p {
+    font-size: 0.7rem;
+  }
+
+  #home-text i {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 568px) {
+  #home-text h1 {
+    font-size: 1.5rem;
+  }
+
+  #home-text h3 {
+    font-size: 1rem;
+  }
+
+  #home-text p {
+    font-size: 0.5rem;
+  }
+
+  #home-text {
+    display: block;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 450px) {
+  main {
+    max-width: none;
+  }
+  #home-text {
+    height: auto;
+  }
+
+  #portrait-only {
+    display: block;
+    font-size: 10rem;
+  }
+
+  #home-text i {
+    font-size: 4rem;
+  }
+
+  .home-headers {
+    height: 100vh;
+    border: 3px solid #00adb5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about {
+    height: 100vh;
+    border-left: 3px solid #00adb5;
+    border-right: 3px solid #00adb5;
+    padding: 2rem;
+    margin: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    animation: none;
+  }
+
+  .about-item {
+    margin-top: 1rem;
+  }
+
+  #home-text h1 {
+    color: #00adb5;
+    font-size: 2.4rem;
+  }
+
+  #home-text h3 {
+    font-size: 1rem;
+  }
+
+  #home-text p {
+    font-size: 0.9rem;
+    padding: 0 2rem;
+  }
+
+  #form {
+    margin: 0;
+  }
+
+  .form-input input {
+    width: 200px;
+  }
+
+  .form-content {
+    height: 100vh;
+    border: 3px solid #00adb5;
+    border-radius: 0%;
+  }
+}
+
+/* HEIGHT */
+
+@media (max-height: 500px) {
+  .form-content label {
+    font-size: 0.7rem;
+  }
+
+  .form-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-input input {
+    width: 400px;
+    padding: 4px;
+  }
+
+  .form-group {
+    margin: 0;
+  }
+
+  .submit-button button {
+    padding: 0.8rem 1.2rem;
+    margin: 1.4rem;
+  }
+
+  .form-footer {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-height: 320px) {
+  .form-content label {
+    font-size: 0.7rem;
+  }
+
+  .form-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-input input {
+    width: 400px;
+    padding: 4px;
+  }
+
+  .form-group {
+    margin: 0;
+  }
+
+  .submit-button button {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+    margin: 0.5rem;
+  }
+
+  .form-footer {
+    font-size: 0.7rem;
+  }
 }

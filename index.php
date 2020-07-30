@@ -25,6 +25,7 @@
     <main>
       <section id="home-text">
         <div class="home-headers">
+          <i id="portrait-only" class="fas fa-graduation-cap fa-7x"></i>
           <h1>The University Grade Calculator</h1>
           <h3>The Only Grade Calculator You Need.</h3>
         </div>
