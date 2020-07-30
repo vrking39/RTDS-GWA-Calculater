@@ -58,9 +58,30 @@
         <button class="add"><i class="fas fa-plus-circle"></i> Add</button>
         <button class="reset"><i class="fas fa-undo-alt"></i> Reset</button>
         <br />
-        <button type="submit">
+        <button id="modal-btn" class="button">Save</button>
+
+         <div id="my-modal" class="modal">
+         <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+               <h2>Save to my Grades</h2>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <input type="text" placeholder="Enter Term">
+                <br>
+                <input type="text" placeholder="Enter Year"><br>
+                <button id="mod-subBtn" class="button">Submit</button>
+              </form>
+            </div>
+          <div class="modal-footer">
+            <h3></h3>
+          </div>
+        </div>
+        </div>
+        <!-- <button type="submit">
           <i class="fas fa-calculator"></i> Calculate
-        </button>
+        </button> -->
       </section>
     </main>
     <script src="js/calculator.js"></script>
