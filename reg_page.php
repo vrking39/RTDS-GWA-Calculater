@@ -74,7 +74,7 @@ $schools = $conn->query("SELECT * FROM school");
                                     <datalist id="schools">
                                         <?php
                                             while ($row = $schools->fetch_assoc()){
-                                            echo '<option value="'.$row['School_Name'].'">'.$row['School_Name'].'</option>';
+                                                echo '<option value="'.$row['School_Name'].'">'.$row['School_Name'].'</option>';
                                             }
                                         ?>
                                     </datalist>
@@ -85,7 +85,7 @@ $schools = $conn->query("SELECT * FROM school");
 
                     <!-- Submit Button -->
                     <div class="submit-button">
-                        <button type="submit">Submit</button>
+                        <button type="button" id="submit" name="submit">Submit</button>
                     </div>
 
                     <!-- Go back to Sign In -->
