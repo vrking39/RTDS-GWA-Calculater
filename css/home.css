@@ -1,5 +1,4 @@
 main {
-  text-align: center;
   height: 100vh;
   display: flex;
   justify-content: space-evenly;
@@ -9,6 +8,7 @@ main {
 }
 
 #home-text {
+  text-align: center;
   margin-right: 4rem;
 }
 
@@ -41,28 +41,5 @@ main {
 }
 
 .form-content {
-  border: 1px solid #00adb5;
-  border-radius: 10px;
-  display: inline-block;
-  padding: 4rem;
   animation: slide-down 600ms 700ms ease-in-out both;
-}
-
-.form-content h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.form-group {
-  margin-top: 1rem;
-}
-
-.form-group label {
-  font-size: 0.9rem;
-}
-
-.form-input input {
-  margin: 0.5rem 0;
-  width: 100%;
-  padding: 10px;
 }

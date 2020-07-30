@@ -8,28 +8,99 @@ $schools = $conn->query("SELECT * FROM school");
 
 <html>
     <head>
-        <title>GWA Calculator</title>
+        <title>Grade Calculator PH | Registration</title>
+        <link rel="stylesheet" href="css/shared.css">
+        <link rel="stylesheet" href="css/register.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <form method='POST' id="register">
-            <input type="text" name="username" placeholder="Username" required><br>
-            <input type="password" name="pass" placeholder="Password" required><br>
-            <input type="password" name="confpass" placeholder="Confirm Password" required><br>
-            <input type="number" name="stdnum" placeholder="Student Number" required><br>
-            <input type="text" name="name" placeholder="Your Name" required><br>
-            <input list="schools" name="school" id="school" placeholder="School" required>
-            <datalist id="schools">
-                <?php
-                    while ($row = $schools->fetch_assoc()){
-                        echo '<option value="'.$row['School_Name'].'">'.$row['School_Name'].'</option>';
-                    }
-                ?>
-            </datalist>
-            <br><input type="button" id="submit" name="submit" value="Submit">
-        </form>
+        <main>
+            <form method='POST' id="register">
+                <div class="form-content">
+                    <h2>Register</h2>
+
+                    <div class="column-split">
+                        <!-- Left Column -->
+                        <div class="column-1">
+                            <!-- Username -->
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <div class="form-input">
+                                    <input type="text" name="username" placeholder="Username" required>
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="username">Password:</label>
+                                <div class="form-input">
+                                    <input type="password" name="pass" placeholder="Password" required>
+                                </div>
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="form-group">
+                                <label for="username">Confirm Password:</label>
+                                <div class="form-input">
+                                    <input type="password" name="confpass" placeholder="Confirm Password" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right column -->
+                        <div class="column-2">
+                            <!-- Student Number -->
+                            <div class="form-group">
+                                <label for="username">Student Number:</label>
+                                <div class="form-input">
+                                    <input type="number" name="stdnum" placeholder="Student Number" required>
+                                </div>
+                            </div>
+
+                            <!-- Your Name -->
+                            <div class="form-group">
+                                <label for="username">Your Name:</label>
+                                <div class="form-input">
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </div>
+                            </div>
+                            
+                            <!-- School -->
+                            <div class="form-group">
+                                <label for="username">School:</label>
+                                <div class="form-input">
+                                    <input list="schools" name="school" id="school" placeholder="School" required>
+                                    <datalist id="schools">
+                                        <?php
+                                            while ($row = $schools->fetch_assoc()){
+                                            echo '<option value="'.$row['School_Name'].'">'.$row['School_Name'].'</option>';
+                                            }
+                                        ?>
+                                    </datalist>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="submit-button">
+                        <button type="submit">Submit</button>
+                    </div>
+
+                    <!-- Go back to Sign In -->
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="index.php">Sign In </a></p>
+                    </div>
+                </div>
+            </form>
+
+            <section id="register-text">
+                <i class="fas fa-users fa-7x"></i>
+                <h1>Thank you for choosing us!</h1>
+                <h3>Having your own personal account is just one click away.</h3>
+            </section>
+        </main>
     </body>
 </html>
 

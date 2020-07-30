@@ -57,33 +57,39 @@
           <?php require 'login.php';?>
 
           <div class="form-group">
-            <label for="username">Username: </label>
+            <label for="username">Username:</label>
             <div class="form-input">
               <input
                 type="text"
                 name="username"
                 id="username"
                 placeholder="Username"
+                required
               />
             </div>
           </div>
 
           <div class="form-group">
-            <label for="username">Password: </label>
+            <label for="username">Password:</label>
             <div class="form-input">
               <input
                 type="password"
                 name="password"
                 id="password"
                 placeholder="Password"
+                required
               />
             </div>
           </div>
 
-          <button type="submit">Login</button>
+          <div class="submit-button">
+            <button type="submit">Login</button>
+          </div>
+
+
         </form>
 
-          <div class="register">
+          <div class="form-footer">
             <p>No Account? <a href="reg_page.php">Sign Up </a></p>
           </div>
         </div>
