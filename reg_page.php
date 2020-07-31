@@ -22,7 +22,7 @@ $schools = $conn->query("SELECT * FROM school");
 
                     <div class="column-split">
                         <!-- Left Column -->
-                        <div class="column-1">
+                        <div class="column column-1">
                             <!-- Username -->
                             <div class="form-group">
                                 <label for="username">Username:</label>
@@ -49,7 +49,7 @@ $schools = $conn->query("SELECT * FROM school");
                         </div>
 
                         <!-- Right column -->
-                        <div class="column-2">
+                        <div class="column column-2">
                             <!-- Student Number -->
                             <div class="form-group">
                                 <label for="username">Student Number:</label>
