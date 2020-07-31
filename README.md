@@ -5,19 +5,40 @@ The University Grade Calculator is a webapp that can be used to calculate the Ge
 # Project Status
 The project is currently in development. 
 
+If you would like to download this webapp for testing on their own device, these are
+the following steps:
+
+# Pre-requisites
+* any web server solution stack (i.e. XAMPP, MAMP, WAMP)
+* any code/text editor (VS Code is recommended)
+* any web browser (Chrome is recommended)
+
+# Installation
+1. Download compressed zip file of the project
+2. Place compressed file on folder of web server solution stack (ie. htdocs in XAMPP)
+3. Uncompress file and place files in the folder
+4. Start Apache and MySql
+5. Type Localhost and your port number 
+
+# Contributing
+Any contributions you make are greatly appreciated.
+
+1.Fork the Project
+2.Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3.Commit your Changes (git commit -m 'Add some AmazingFeature')
+4.Push to the Branch (git push origin feature/AmazingFeature)
+5.Open a Pull Request
 
 ## Getting Started
-Sign-in
-![Sign-in](https://user-images.githubusercontent.com/67271526/88997651-bbb87c00-d322-11ea-87c9-8601dbbc17b8.png)
-Sign-up
-![Sign-up](https://user-images.githubusercontent.com/67271526/89002662-4653a800-d330-11ea-8171-f0d893fd9ada.png)
-Menu Page
-![Homepage](https://user-images.githubusercontent.com/67271526/88997645-b9eeb880-d322-11ea-939e-0b5e0556f2ad.png)
-My Grades
-![My Grades](https://user-images.githubusercontent.com/67271526/89002755-83b83580-d330-11ea-9547-ec8b0ee7970e.png)
-Calculator
-![calaculator](https://user-images.githubusercontent.com/67271526/88997639-b824f500-d322-11ea-85d2-c8b3a5758e5c.PNG)
-![calculator-save](https://user-images.githubusercontent.com/67271526/88997640-b8bd8b80-d322-11ea-85b0-64413ef320cf.PNG)
+
+##Authors
+Gelo Ramos - @geloram
+Charles Julian - @CFrancisJ
+Renzo Tan - @renzotimtan
+VR King - @vrking39
+Chesca Faustino - @chescafaustino
+
+
 ### Built with
 * [css](https://www.w3schools.com/Css/)
 * [html](https://www.w3schools.com/html/)
