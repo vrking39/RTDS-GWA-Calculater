@@ -30,12 +30,25 @@ Any contributions you make are greatly appreciated.
 5.Open a Pull Request
 
 ## Getting Started
+Sign-in Page
+![Sign In](screenshots/Sign-in.png)
+Sign-Up Page
+![Sign In](screenshots/Sign-up.png)
+Menu
+![Menu Page](screenshots/Homepage.png)
+My Grades Page
+![My Grades Page](screenshots/My%20Grades.png)
+Calculator Page
+![Calculator](screenshots/calaculator.PNG)
+![Calculator](screenshots/calculator-save.PNG)
 
-##Authors
-Gelo Ramos - @geloram
-Charles Julian - @CFrancisJ
-Renzo Tan - @renzotimtan
-VR King - @vrking39
+
+
+## Authors
+Gelo Ramos - @geloram <br>
+Charles Julian - @CFrancisJ<br>
+Renzo Tan - @renzotimtan<br>
+VR King - @vrking39<br>
 Chesca Faustino - @chescafaustino
 
 
