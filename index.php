@@ -39,12 +39,12 @@
           <div class="about-item">
             <i class="far fa-check-circle fa-4x"></i>
             <p>
-              Calculate your cumulative GPA with accuracy
+              Calculate your cumulative GWA with accuracy
             </p>
           </div>
           <div class="about-item">
             <i class="fas fa-university fa-4x"></i>
-            <p>Convert your GPA to other grading systems</p>
+            <p>Convert your GwA to GPA</p>
           </div>
         </div>
 
