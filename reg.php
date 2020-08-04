@@ -17,17 +17,20 @@ $result = $stmt->get_result();
 
 //when username has been used
 if ($result->num_rows != 0){
-    echo "3";
+    echo json_encode(array('success' => 3));
+    //echo json_encode("3");
 }
 
 //when password and confirm password are not the same
 else if ($pass != $confpass){
-    echo "1";
+    echo json_encode(array('success' => 1));
+    // json_encode("1");
 }
 
 //when school has no data, high chance of not happening
 else if ($school == NULL){
-    echo "2";
+    echo json_encode(array('success' => 2));
+    //echo json_encode("2");
 }
 
 //when every variable has a value
@@ -49,7 +52,8 @@ else {
         $stmt->bind_param("ssisi", $user, $pass, $num, $name, $school);
         $stmt->execute();
 
-        echo "0";
+        echo json_encode(array('success' => 0));
+        //echo json_encode("0");
     }
     //if school is not found
     else {
@@ -73,7 +77,8 @@ else {
         $stmt->bind_param("ssisi", $user, $pass, $num, $name, $school);
         $stmt->execute();
 
-        echo "0";
+        echo json_encode(array('success' => 0));
+        //echo json_encode("0");
     }
 
     

@@ -85,7 +85,7 @@ $schools = $conn->query("SELECT * FROM school");
 
                     <!-- Submit Button -->
                     <div class="submit-button">
-                        <button type="button" id="submit" name="submit">Submit</button>
+                        <button type="submit" id="submit" name="submit">Submit</button>
                     </div>
 
                     <!-- Go back to Sign In -->
@@ -108,23 +108,26 @@ $schools = $conn->query("SELECT * FROM school");
     //when user has clicked submit, reg.php is called and
     //one of four scenarios will happen
     $(document).ready(function(){	
-        $('#submit').click(function(){		
+        $('#register').submit(function(event){	
+            event.preventDefault();	
             $.ajax({
+                type:"POST",
                 url:"reg.php",
-                method:"POST",
-                data:$('#register').serialize(),
-                success:function(data){
-                    if (data == "0"){
+                //method:"POST",
+                data:$(this).serialize(),
+                success:function(response){
+                    var jsonData = JSON.parse(response);
+                    if (jsonData.success == "0"){
                         alert("Registration Complete!");
-                        window.location.href="index.php";
+                        location.href="index.php";
                     }
-                    else if (data == "1"){
+                    else if (jsonData.success == "1"){
                         alert("Please retype your passwords");
                     }
-                    else if (data == "2"){
+                    else if (jsonData.success == "2"){
                         alert("Please choose your school");
                     }
-                    else if (data == "3"){
+                    else if (jsonData.success == "3"){
                         alert("Username already taken");
                     }
                     //alert (data);
