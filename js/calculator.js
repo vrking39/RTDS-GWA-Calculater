@@ -29,8 +29,10 @@ function addGradeInput() {
     // Add grades inputs
     const input = document.createElement("input");
     input.type = "number";
+    input.name = "grades[]";
+    input.id = "grade";
     input.min = 0;
-    input.max = 4;
+    input.max = 5;
     input.step = 0.01;
     gradeInputs.appendChild(input); // put it into the DOM
 }
@@ -40,6 +42,8 @@ function addSubjInput() {
   // Add subj inputs
   const input = document.createElement("input");
   input.type = "text";
+  input.name = "subj[]";
+  input.id = "subj";
   subjInputs.appendChild(input); // put it into the DOM
 }
 
@@ -52,8 +56,8 @@ function addUnitInput() {
   document.querySelector(".unit-inputs").appendChild(select);
 
   // Set name for select tag
-  select.setAttribute("name", "units" + inputNumber);
-  select.setAttribute("id", "units" + inputNumber);
+  select.setAttribute("name", "units[]");
+  select.setAttribute("id", "units");
   inputNumber++;
 
   // Create 1-6 options

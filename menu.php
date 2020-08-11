@@ -29,8 +29,8 @@
       </div>
       <div class="jumbotron-buttons">
         <a class="a-button" href=""><i class="fas fa-list-ol"></i> My Grades</a>
-        <a class="a-button" href=""><i class="fas fa-calculator"></i> Calculator</a>
-        <a class="a-button" href=""><i class="fas fa-arrows-alt-h"></i> Converter</a>
+        <a class="a-button" href="calcu_page.html"><i class="fas fa-calculator"></i> Calculator</a>
+        <a class="a-button" href="converter.html"><i class="fas fa-arrows-alt-h"></i> Converter</a>
         <a class="a-button" href="logout.php">Logout</a>
       </div>
     </main>

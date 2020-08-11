@@ -1,49 +1,3 @@
-#calculator-content {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-/* Left side */
-.calculator-inputs {
-  display: flex;
-  padding: 5rem;
-}
-.calculator-inputs h3 {
-  text-align: center;
-}
-
-.calculator-inputs input,
-.calculator-inputs select {
-  height: 3.5rem;
-  width: 8.5rem;
-  font-size: 1.4rem;
-  padding-left: 1rem;
-  margin: 1.2rem;
-}
-
-.calc-input {
-  display: flex;
-  width: 50%;
-  flex-direction: column;
-}
-
-/* Right side */
-.calculator-result {
-  align-self: flex-start;
-  text-align: center;
-  padding-top: 5rem;
-}
-
-.calculator-result h1 {
-  font-size: 12rem;
-  font-weight: 500;
-}
-
-.calculator-result h2 {
-  font-weight: 300;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -62,6 +16,11 @@
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
+}
+
+.modal-body input {
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .modal-header h2,
@@ -105,4 +64,57 @@
 
 input {
   text-align: center;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Left side */
+
+table,
+th,
+td {
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 0;
+}
+
+#grades {
+  padding: 5rem;
+}
+
+#grades input {
+  height: 3.5rem;
+  width: 7.5rem;
+  margin: 0 1rem;
+  font-size: 1.3rem;
+}
+
+#grades #add {
+  border-radius: 5px;
+}
+
+#grades .btn_remove {
+  padding: 1rem 1.3rem;
+  border-radius: 5px;
+}
+
+/* Right side */
+.calculator-result {
+  align-self: flex-start;
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.calculator-result h1 {
+  font-size: 12rem;
+  font-weight: 500;
+}
+
+.calculator-result h2 {
+  font-weight: 300;
 }
