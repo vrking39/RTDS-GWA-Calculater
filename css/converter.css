@@ -1,0 +1,22 @@
+#grades {
+  padding: 5rem;
+}
+.calculator-result {
+  padding: 0;
+}
+
+.calculator-result h1 {
+  font-size: 9.5rem;
+  font-weight: 500;
+}
+
+.calculator-result h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.converter-results {
+  padding-top: 5rem;
+  align-self: flex-start;
+  width: 40%;
+}

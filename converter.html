@@ -1,0 +1,205 @@
+<html>
+  <head>
+    <title>
+      Grade Calculator PH | Converter
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/calcu_page.css" />
+    <link rel="stylesheet" href="css/converter.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    />
+  </head>
+  <body>
+    <header id="main-header__calculator">
+      <div class="header-content">
+        <a class="a-button button-reverse header-link" href="menu.html"
+          ><i class="fas fa-arrow-circle-left"></i> Back</a
+        >
+        <h2>Converter</h2>
+      </div>
+    </header>
+    <div class="container">
+      <div class="form-group">
+        <form name="grades" id="grades">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dynamic_field">
+              <tr>
+								<th>Subject</th>
+								<th>Given Grade</th>
+								<th>Units</th>
+								<th>Converted Grade</th>
+							</tr> 
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    name="subj[]"
+                    placeholder="Subject"
+                    class="form-control name_list"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name="grade[]"
+                    placeholder="Grade"
+                    class="form-control name_list grade"
+                    min="0"
+                    max="5"
+                    step="0.01"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    list="hrs"
+                    name="units[]"
+                    placeholder="Units"
+                    class="form-control name_list unit"
+                    min="1"
+                    max="6"
+                    step="1"
+                    required
+                  />
+                  <datalist id="hrs">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </datalist>
+                </td>
+                <td>
+                  <output class="convert"></output>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    name="add"
+                    id="add"
+                  >
+                    Add
+                  </button>
+                </td>
+              </tr>
+			</table>
+          </div>
+      </div>
+
+      <div class="converter-results">
+        <section class="calculator-result gwa">
+          <h1><output id="finalGrade">0.00</output></h1>
+          <h2>General Weighted Average</h2>
+        </section>
+        <section class="calculator-result gpa">
+          <h1><output id="finalGrade">0.00</output></h1>
+          <h2>Grade Point Average</h2>
+        </section>
+      </div>
+
+    </div>
+  </body>
+</html>
+
+<script>
+
+  $(document).ready(function () {
+    var i = 1;
+    $("#add").click(function () {
+      i++;
+      $("#dynamic_field").append(
+        '<tr id="row' +
+          i +
+          '"><td><input type="text" name="subj[]" placeholder="Subject" class="form-control name_list" required /></td><td><input type="number" name="grade[]" placeholder="Grade" class="form-control name_list grade" min="0" max="5" step="0.01" required /></td><td><input type="number" list="hrs" name="units[]" placeholder="Units" class="form-control name_list unit" min="1" max="6" step="1" required /><datalist id="hrs"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></datalist></td><td><output class="convert"></output></td><td><button type="button" name="remove" id="' +
+          i +
+          '" class="btn_remove">X</button></td></tr>'
+      );
+    });
+
+    function calculate() {
+      var uns = 0;
+      var roll = 0;
+      var gwa = 0;
+
+      $("tr").each(function () {
+        var unit = parseFloat($(this).find(".unit").val());
+        var grade = parseFloat($(this).find(".grade").val());
+
+        if (!isNaN(unit) && unit != null && !isNaN(grade) && grade != null) {
+          uns += unit;
+          roll += unit * grade;
+        }
+      });
+
+      gwa = roll / uns;
+      if (!isNaN(gwa)) {
+        $("#finalGrade").text(gwa.toFixed(2));
+      }
+    }
+
+    $(document).on("click", ".btn_remove", function () {
+      var button_id = $(this).attr("id");
+      $("#row" + button_id + "").remove();
+      calculate();
+    });
+
+    $("table").on("keyup", ".unit, .grade", function () {
+      calculate();
+    });
+
+    /*$('#grades').submit(function(event){		
+		event.preventDefault();
+		$.ajax({
+			type: "POST",
+			url:"calcu.php",
+			//method:"POST",
+			data:$(this).serialize(),
+			success:function(data)
+			{
+				var jsonData = JSON.parse(data);
+				
+				//alert(jsonData.success);
+				if (jsonData.success == "0"){
+					alert("error");
+				}
+				else {
+					alert(jsonData.success);
+				}
+			}
+		});
+	});*/
+  });
+
+  // Get DOM Elements
+const modal = document.querySelector('#my-modal');
+const modalBtn = document.querySelector('#modal-btn');
+const closeBtn = document.querySelector('.close');
+
+// Events
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
+
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+</script>
