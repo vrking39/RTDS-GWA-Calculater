@@ -1,42 +1,70 @@
 <html>
-
-<head>
+  <head>
     <title>
-        Grade Calculator PH | Calculator
+      Grade Calculator PH | Calculator
     </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/shared.css" />
     <link rel="stylesheet" href="css/calcu_page.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
-</head>
-
-<body>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    />
+  </head>
+  <body>
     <header id="main-header__calculator">
-        <div class="header-content">
-            <a class="a-button button-reverse header-link" href="menu.php"><i class="fas fa-arrow-circle-left"></i> Back</a>
-            <h2>Calculator</h2>
-        </div>
+      <div class="header-content">
+        <a class="a-button button-reverse header-link" href="menu.html"
+          ><i class="fas fa-arrow-circle-left"></i> Back</a
+        >
+        <h2>Calculator</h2>
+      </div>
     </header>
     <div class="container">
-        <div class="form-group">
-            <form name="grades" id="grades">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dynamic_field">
-                        <tr>
-                            <th>Subject</th>
-                            <th>Given Grade</th>
-                            <th>Units</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" name="subj[]" placeholder="Subject" class="form-control name_list" required />
-                            </td>
-                            <td>
-                                <input type="number" name="grade[]" placeholder="Grade" class="form-control name_list grade" min="0" max="5" step="0.01" required />
-                            </td>
-                            <td>
-                                <input type="number" list="hrs" name="units[]" placeholder="Units" class="form-control name_list unit" min="1" max="6" step="1" required />
-                                <datalist id="hrs">
+      <div class="form-group">
+        <form name="grades" id="grades">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dynamic_field">
+              <tr>
+                <th>Subject</th>
+                <th>Given Grade</th>
+                <th>Units</th>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    name="subj[]"
+                    placeholder="Subject"
+                    class="form-control name_list"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name="grade[]"
+                    placeholder="Grade"
+                    class="form-control name_list grade"
+                    min="0"
+                    max="5"
+                    step="0.01"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    list="hrs"
+                    name="units[]"
+                    placeholder="Units"
+                    class="form-control name_list unit"
+                    min="1"
+                    max="6"
+                    step="1"
+                    required
+                  />
+                  <datalist id="hrs">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -44,99 +72,98 @@
                     <option value="5">5</option>
                     <option value="6">6</option>
                   </datalist>
-                            </td>
-                            <td>
-                                <button type="button" name="add" id="add">
+                </td>
+                <td>
+                  <button type="button" name="add" id="add">
                     Add
                   </button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </form>
-        </div>
-        <section class="calculator-result">
-            <h1><output id="finalGrade">0.00</output></h1>
-            <h2>General Weighted Average</h2>
-            <button class="reset"><i class="fas fa-undo-alt"></i> Reset</button>
-            <button id="modal-btn" class="button">
+                </td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+      <section class="calculator-result">
+        <h1><output id="finalGrade">0.00</output></h1>
+        <h2>General Weighted Average</h2>
+        <button class="reset"><i class="fas fa-undo-alt"></i> Reset</button>
+        <button id="modal-btn" class="button">
           <i class="far fa-save"></i> Save
         </button>
 
-            <div id="my-modal" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close">&times;</span>
-                        <h2>Save to my Grades</h2>
-                    </div>
-                    <div class="modal-body">
-                        <form action="">
-                            <input type="text" placeholder="Enter Term" />
-                            <br />
-                            <input type="text" placeholder="Enter Year" /><br />
-                            <button id="mod-subBtn" class="button">Submit</button>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <h3></h3>
-                    </div>
-                </div>
+        <div id="my-modal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>Save to my Grades</h2>
             </div>
-            <!-- <button type="submit">
+            <div class="modal-body">
+              <form action="">
+                <input type="text" placeholder="Enter Term" />
+                <br />
+                <input type="text" placeholder="Enter Year" /><br />
+                <button id="mod-subBtn" class="button">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <h3></h3>
+            </div>
+          </div>
+        </div>
+        <!-- <button type="submit">
 			            <i class="fas fa-calculator"></i> Calculate
 			          </button> -->
-        </section>
+      </section>
     </div>
-</body>
-
+  </body>
 </html>
 
 <script>
-    $(document).ready(function() {
-        var i = 1;
-        $("#add").click(function() {
-            i++;
-            $("#dynamic_field").append(
-                '<tr id="row' +
-                i +
-                '"><td><input type="text" name="subj[]" placeholder="Subject" class="form-control name_list" required /></td><td><input type="number" name="grade[]" placeholder="Grade" class="form-control name_list grade" min="0" max="5" step="0.01" required /></td><td><input type="number" list="hrs" name="units[]" placeholder="Units" class="form-control name_list unit" min="1" max="6" step="1" required /><datalist id="hrs"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></datalist></td><td><button type="button" name="remove" id="' +
-                i +
-                '" class="btn_remove">X</button></td></tr>'
-            );
-        });
+  $(document).ready(function () {
+    var i = 1;
+    $("#add").click(function () {
+      i++;
+      $("#dynamic_field").append(
+        '<tr id="row' +
+          i +
+          '"><td><input type="text" name="subj[]" placeholder="Subject" class="form-control name_list" required /></td><td><input type="number" name="grade[]" placeholder="Grade" class="form-control name_list grade" min="0" max="5" step="0.01" required /></td><td><input type="number" list="hrs" name="units[]" placeholder="Units" class="form-control name_list unit" min="1" max="6" step="1" required /><datalist id="hrs"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></datalist></td><td><button type="button" name="remove" id="' +
+          i +
+          '" class="btn_remove">X</button></td></tr>'
+      );
+    });
 
-        function calculate() {
-            var uns = 0;
-            var roll = 0;
-            var gwa = 0;
+    function calculate() {
+      var uns = 0;
+      var roll = 0;
+      var gwa = 0;
 
-            $("tr").each(function() {
-                var unit = parseFloat($(this).find(".unit").val());
-                var grade = parseFloat($(this).find(".grade").val());
+      $("tr").each(function () {
+        var unit = parseFloat($(this).find(".unit").val());
+        var grade = parseFloat($(this).find(".grade").val());
 
-                if (!isNaN(unit) && unit != null && !isNaN(grade) && grade != null) {
-                    uns += unit;
-                    roll += unit * grade;
-                }
-            });
-
-            gwa = roll / uns;
-            if (!isNaN(gwa)) {
-                $("#finalGrade").text(gwa.toFixed(2));
-            }
+        if (!isNaN(unit) && unit != null && !isNaN(grade) && grade != null) {
+          uns += unit;
+          roll += unit * grade;
         }
+      });
 
-        $(document).on("click", ".btn_remove", function() {
-            var button_id = $(this).attr("id");
-            $("#row" + button_id + "").remove();
-            calculate();
-        });
+      gwa = roll / uns;
+      if (!isNaN(gwa)) {
+        $("#finalGrade").text(gwa.toFixed(2));
+      }
+    }
 
-        $("table").on("keyup", ".unit, .grade", function() {
-            calculate();
-        });
+    $(document).on("click", ".btn_remove", function () {
+      var button_id = $(this).attr("id");
+      $("#row" + button_id + "").remove();
+      calculate();
+    });
 
-        /*$('#grades').submit(function(event){		
+    $("table").on("keyup", ".unit, .grade", function () {
+      calculate();
+    });
+
+    /*$('#grades').submit(function(event){		
 		event.preventDefault();
 		$.ajax({
 			type: "POST",
@@ -157,32 +184,32 @@
 			}
 		});
 	});*/
-    });
+  });
 
-    // Get DOM Elements
-    const modal = document.querySelector('#my-modal');
-    const modalBtn = document.querySelector('#modal-btn');
-    const closeBtn = document.querySelector('.close');
+  // Get DOM Elements
+const modal = document.querySelector('#my-modal');
+const modalBtn = document.querySelector('#modal-btn');
+const closeBtn = document.querySelector('.close');
 
-    // Events
-    modalBtn.addEventListener('click', openModal);
-    closeBtn.addEventListener('click', closeModal);
-    window.addEventListener('click', outsideClick);
+// Events
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
 
-    // Open
-    function openModal() {
-        modal.style.display = 'block';
-    }
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
 
-    // Close
-    function closeModal() {
-        modal.style.display = 'none';
-    }
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
 
-    // Close If Outside Click
-    function outsideClick(e) {
-        if (e.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
 </script>
